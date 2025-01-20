@@ -1,0 +1,27 @@
+version: "3.11"
+
+services:
+  tests:
+    image: tests:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/workspace
+    command: /bin/sh -c "pytest -sv --alluredir=allure-results"
+    working_dir: /usr/workspace
+    environment:
+      BASE_URL: ${BASE_URL}
+      CI: true
+
+  report:
+      image: tests:v1
+      build:
+        context: .
+        dockerfile: Dockerfile
+      volumes:
+        - ./:/usr/workspace
+      command: /bin/sh -c "allure generate allure-results --clean -o allure-report && allure serve -h 0.0.0.0 -p 8080"
+      working_dir: /usr/workspace
+      ports:
+        - "8080:8080"
