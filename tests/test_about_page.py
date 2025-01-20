@@ -2,7 +2,7 @@ import allure
 
 from pages.about_page import AboutPage
 
-
+@allure.suite("Страница О нас")
 class TestAboutPage:
     @allure.title("Проверка содержания страницы О нас")
     def test_view_about_page(self, driver, open_site):

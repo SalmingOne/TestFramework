@@ -6,6 +6,7 @@ from data.urls import Urls
 from pages.main_page import MainPage
 
 
+@allure.suite("Главная страница")
 class TestMainPage:
 
     @allure.title("Проверка содержания главной страницы")

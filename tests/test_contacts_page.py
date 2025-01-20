@@ -3,6 +3,7 @@ import allure
 from pages.contacts_page import ContactsPage
 
 
+@allure.suite("Страница Контакты")
 class TestContactsPage:
 
     @allure.title("Проверка содержания страницы Контакты")

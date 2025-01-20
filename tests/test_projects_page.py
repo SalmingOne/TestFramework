@@ -3,6 +3,7 @@ import allure
 from pages.projects_page import ProjectsPage
 
 
+@allure.suite("Страница Проекты")
 class TestProjectsPage:
 
     @allure.title("Проверка содержания страницы Проекты")

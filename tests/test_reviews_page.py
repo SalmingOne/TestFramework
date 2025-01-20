@@ -3,6 +3,7 @@ import allure
 from pages.reviews_page import ReviewsPage
 
 
+@allure.suite("Страница Отзывы")
 class TestReviewsPage:
 
     @allure.title("Проверка содержания страницы Отзывы")
